@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import {  createHashRouter, RouterProvider } from 'react-router-dom'
 import Home from './pages/Home.jsx'
 import Root from './pages/Root.jsx'
 import BookItem from './pages/BookItem.jsx'
 
-const Routes = createBrowserRouter([
+const Routes = createHashRouter([
   {
     path : '/',
     element : <Root />,

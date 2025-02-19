@@ -1,16 +1,38 @@
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import './NavBar.css'
 import NavItem from './NavItem'
 import { ThemeContext } from '../../../pages/Root'
 import { MdOutlineDarkMode, MdOutlineLightMode } from 'react-icons/md'
 import { FaBars, FaTimes } from 'react-icons/fa'
-import { BsToggle2Off, BsToggle2On, BsToggleOff, BsToggleOn } from 'react-icons/bs'
+import { BsToggle2Off, BsToggle2On } from 'react-icons/bs'
 
 
 const NavBar = ({logo,navitem}) => {
 
   const {theme , setTheme} = useContext(ThemeContext)
   const [isOpen , setIsOpen] = useState(false)
+  const sideBar = useRef(null);
+  const toggleBtn = useRef(null);
+
+  useEffect(() => {
+    const ClickOut = (event) => {
+      if (
+        sideBar.current &&
+        !sideBar.current.contains(event.target) &&
+        toggleBtn.current &&
+        !toggleBtn.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", ClickOut);
+
+    return () => {
+      document.removeEventListener("mousedown", ClickOut);
+    };
+  }, []);
+  
 
 
   return (
@@ -18,10 +40,10 @@ const NavBar = ({logo,navitem}) => {
       <div className="logo">
       <h1>B-W<img src={logo}/>rld</h1>
       </div>
-      <button className='toggle-menu' onClick={()=> setIsOpen(!isOpen)}>
+      <button ref={toggleBtn} className='toggle-menu' onClick={()=> setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
-      <div className={isOpen ? "nav-items active" : "nav-items"}>
+      <div ref={sideBar} className={isOpen ? "nav-items active" : "nav-items"}>
         <ul>
           {navitem?.map((item,index) => {
             return (

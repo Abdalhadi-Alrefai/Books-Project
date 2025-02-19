@@ -41,7 +41,7 @@ const [theme,setTheme] = useState(localStorage.getItem("theme")||"light")
   return (
     <ThemeContext.Provider value={{theme,setTheme}}>
       <NavBar 
-        logo="/assets/img/book world.svg"
+        logo="dist/assets/img/book world.svg"
         navitem={navItems}
       />
       <Outlet/>

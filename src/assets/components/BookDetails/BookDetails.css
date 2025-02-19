@@ -83,6 +83,7 @@
   .item {
     flex-direction: column;
     padding: 50px 20px;
+    margin-top: 53px;
   }
   .item .image img {
     width: 100%;

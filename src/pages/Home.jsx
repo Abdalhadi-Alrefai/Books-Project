@@ -11,7 +11,7 @@ const Home = () => {
         title="Eric-Emanuel Schmitt "
         description="Eric-Emmanuel Schmitt has been awarded more than 20 literary prizes and distinctions, and in 2001 he received the title of Chevalier des Arts et des Lettres. His books have been translated into over 40 languages."
         btn2="View his boooks"
-        image="/assets/img/book.png"
+        image="dist/assets/img/book.png"
       />
       <Card title="Selected for you " />
       <KnowUs />
