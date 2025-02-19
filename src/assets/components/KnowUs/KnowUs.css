@@ -1,0 +1,86 @@
+:root {
+  --background: #ffffff;
+  --text-color: #000000;
+  --border-color: #937dc299;
+  --button-bg: #937dc2;
+  --button-text: white;
+}
+
+.dark-theme {
+  --background: black;
+  --text-color: #ffffff;
+  --border-color: #555;
+  --button-bg: #937dc2;
+  --button-text: black;
+}
+
+.knowus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 63px;
+  padding: 100px 70px;
+  background-color: var(--background);
+  transition: background-color 0.4s ease-in-out;
+}
+
+.knowus .form {
+  max-width: 570px;
+  color: var(--text-color);
+}
+
+.knowus .form h1 {
+  font-size: 39px;
+  font-weight: 600;
+  padding-bottom: 30px;
+  color: var(--text-color);
+}
+
+.knowus .form p {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.knowus .form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.knowus .form form input {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  height: 35px;
+  margin-top: 35px;
+  background: transparent;
+  color: var(--text-color);
+}
+
+.knowus .form form input::placeholder {
+  color: var(--border-color);
+}
+
+.knowus .form form input[type="submit"] {
+  height: 50px;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.knowus .form form input[type="submit"]:hover {
+  background-color: var(--background);
+  color: var(--button-bg);
+  border: 1px solid var(--button-bg);
+}
+
+.knowus .map {
+  max-width: 593px;
+}
+@media screen and (max-width: 992px) {
+  .knowus {
+    padding: 60px 20px;
+    flex-direction: column-reverse;
+  }
+}

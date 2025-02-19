@@ -1,0 +1,112 @@
+:root {
+  --card-bg-color: white;
+  --card-text-color: #000000;
+  --card-btn-bg: #937dc2;
+  --card-btn-text: white;
+  --card-btn-border: #937dc2;
+}
+
+.dark-theme {
+  --card-bg-color: black;
+  --card-text-color: white;
+  --card-btn-bg: #937dc2;
+  --card-btn-text: black;
+  --card-btn-border: #937dc2;
+}
+
+.card {
+  padding: 0 78px;
+  background-color: var(--card-bg-color);
+  color: var(--card-text-color);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+.card h1 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 46px;
+  transition: color 0.5s ease-in-out;
+}
+
+.card .box {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 30px;
+}
+
+.box img {
+  width: 380px;
+  height: 472px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.box h3 {
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.5s ease-in-out;
+}
+
+.box .page {
+  display: flex;
+  justify-content: space-between;
+  max-width: 380px;
+  margin: 12px 0;
+}
+
+.box .page p {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  transition: color 0.5s ease-in-out;
+}
+
+.box .page i {
+  color: var(--card-btn-bg);
+  padding-right: 5px;
+  font-size: 20px;
+  transition: color 0.5s ease-in-out;
+}
+
+.box button {
+  background: var(--card-btn-bg);
+  width: 380px;
+  height: 40px;
+  border: 1px solid var(--card-btn-border);
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+}
+
+.box button a {
+  text-decoration: none;
+  color: var(--card-btn-text);
+  transition: color 0.3s ease-in-out;
+}
+
+.box button:hover {
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--card-btn-border);
+}
+
+.box button:hover a {
+  color: var(--card-btn-border);
+}
+
+@media screen and (max-width: 992px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 33px 0;
+    padding-right: 8px;
+  }
+  .card h1 {
+    font-size: 30px;
+  }
+}
